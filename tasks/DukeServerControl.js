@@ -1,8 +1,12 @@
 // Montier Elliott montier.elliott@duke-energy.com
+// Tom Horton thomasphorton@gmail.com
 
 var grunt = require('grunt');
 var fs = require('fs');
 
+var config = {
+    server: 'sandboxdev.duke-energy.com'
+};
 
 var DukeServerControl = {
 
@@ -30,27 +34,27 @@ var DukeServerControl = {
   },
 
   readJSONFile: function(server) {
-    var file = grunt.file.readJSON('/Volumes/eneractiondev.duke-energy.com/server.json');
+    var file = grunt.file.readJSON('/Volumes/' + config.server + '/server.json');
     if(file.server == server) {
       grunt.log.writeflags(file);
-      grunt.fail.fatal(new Error(server +" is already on the Server"));
+      grunt.fail.fatal(new Error(server +" is already active"));
     } else {
       this.moveRootToServer(file.server, server);
     }
   },
 
   checkServer: function(cb) {
-    this.doesServerJsonExist = (fs.existsSync("/Volumes/eneractiondev.duke-energy.com/server.json")) ? true : false;
+    this.doesServerJsonExist = (fs.existsSync("/Volumes/' + config.server + '/server.json")) ? true : false;
     cb(this);
   },
 
   checkStatus: function() {
-    var file = grunt.file.readJSON('/Volumes/eneractiondev.duke-energy.com/server.json');
+    var file = grunt.file.readJSON('/Volumes/sandboxdev.duke-energy.com/server.json');
     if(!file.server) {
       grunt.fail.fatal(new Error("Currently there is no server"));
     } else {
       grunt.log.writeln('\nCurrent Server is:', file.server);
-    }   
+    }
   }
 
 };

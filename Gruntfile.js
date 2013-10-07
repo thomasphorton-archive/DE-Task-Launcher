@@ -1,3 +1,7 @@
+var config = {
+    server: 'sandboxdev.duke-energy.com'
+};
+
 module.exports = function(grunt) {
 
   grunt: grunt.initConfig({
@@ -14,43 +18,43 @@ module.exports = function(grunt) {
       },
 
       olsToRoot: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/_sites/ols/{*,.??*} /Volumes/eneractiondev.duke-energy.com/',
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/ols/{*,.??*} /Volumes/' + config.server + '/',
       },
 
       rootTools: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/{*,.??*} /Volumes/eneractiondev.duke-energy.com/_sites/ols/',
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/ols/',
       },
 
       youtilityToRoot: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/_sites/youtility/{*,.??*} /Volumes/eneractiondev.duke-energy.com/',
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/youtility/{*,.??*} /Volumes/' + config.server + '/',
       },
 
       rootToyoutility: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/{*,.??*} /Volumes/eneractiondev.duke-energy.com/_sites/youtility/',
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/youtility/',
       },
 
       deuxToRoot: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/_sites/deux/{*,.??*} /Volumes/eneractiondev.duke-energy.com/',
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/deux/{*,.??*} /Volumes/' + config.server + '/',
       },
 
       rootTodeux: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/{*,.??*} /Volumes/eneractiondev.duke-energy.com/_sites/deux/',
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/deux/',
       },
 
       wwwToRoot: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/_sites/www/{*,.??*} /Volumes/eneractiondev.duke-energy.com/',
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/www/{*,.??*} /Volumes/' + config.server + '/',
       },
 
       rootTowww: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/{*,.??*} /Volumes/eneractiondev.duke-energy.com/_sites/www/',
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/www/',
       },
 
       mobileToRoot: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/_sites/de-mobile/{*,.??*} /Volumes/eneractiondev.duke-energy.com/',
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/de-mobile/{*,.??*} /Volumes/' + config.server + '/',
       },
 
       rootTomobile: {
-        command: 'sudo mv /Volumes/eneractiondev.duke-energy.com/{*,.??*} /Volumes/eneractiondev.duke-energy.com/_sites/de-mobile/',
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/de-mobile/',
       }
 
     }

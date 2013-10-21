@@ -1,0 +1,397 @@
+/* IE Hacks
+========================================================================== */
+.column { *display: inline; *margin-left: 1.8%; } /* ie fix */
+.ccp-notifications .column{ margin: 0 auto !important;}
+
+/* nav
+========================================================================== */
+#ccp {
+  position: relative;
+
+  color: #33B5CF;
+  font-family: Arial;
+}
+#ccp a {
+  text-decoration: none;
+}
+#ccp > nav {
+  padding: 10px 0;
+  background: #F5F5F5;
+  border-bottom: 1px solid #E5E5E5;
+}
+#ccp > nav .row {
+  margin: 0 auto;
+}
+#ccp > nav h1 {
+  color: #33B5CF;
+
+  font-size: 32px;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+#ccp nav .return {
+  float: right;
+  
+  margin-top: 15px;
+  padding: 0 0 0 23px;
+  
+  color: #33B5CF;
+  background: url('/images/icon-home.png') no-repeat scroll left 0 transparent;
+}
+
+/* main
+========================================================================== */
+#ccp > main {
+  margin-top: 20px;
+}
+
+/* header */
+.ccp-header {
+  z-index: 19;
+  position: relative;
+
+}
+.ccp-header ul {
+  position: inherit;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+.ccp-header ul > li:before {
+  content: none;
+}
+.ccp-header ul > li {
+  float: left;
+  background: none;
+
+  margin: 0 4px 0 0;
+  padding: 4px 0 0;
+}
+.ccp-header ul > li a {
+  color: #33B5CF;
+  font-size: 14px;
+
+  background: #FFF;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F4F4F4));
+  background-image: -webkit-linear-gradient(top, #FFF, #F4F4F4);
+  background-image: -moz-linear-gradient(top, #FFF, #F4F4F4);
+  background-image: -ms-linear-gradient(top, #FFF, #F4F4F4);
+  background-image: -o-linear-gradient(top, #FFF, #F4F4F4);
+
+  border: 1px solid #ccc;
+
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+  
+  display: block;
+  padding: 10px 14px;
+  *margin-top: -2px;
+  *border-bottom: none;
+
+}
+.ccp-header .active-tab {
+  margin-top: 1px;
+
+  color: #000;
+  border-bottom: none;
+
+  background: #FFF;
+}
+
+/**
+ * Section
+*/
+.ccp-section {
+  top: -1px;
+  *top: -2px;
+  z-index: 9;
+  position: relative;
+  
+  border-top: 1px solid #CCC;
+}
+
+/**
+ * Fieldsets
+*/
+.ccp-section fieldset {
+  color: #000;
+  background: #FFF;
+  
+  display: none;
+}
+.odd{
+  background: #F5F5F5;
+}
+/**
+ * .ccp-section fieldset == .top-level
+*/
+.top-level > div, .top-level header.row, .top-level section.row, .top-level form > div {
+  padding: 14px 0;
+}
+.top-level > div label[data-tooltip="mailingAddress"], .top-level > div label[data-tooltip="primaryAccount"] {
+  padding-right: 20px;
+}
+.top-level .ccp-change-link {
+  float: right;
+  margin-right: 20px;
+  
+  color: #33B5CF;
+}
+.top-level .ccp-change-link:hover {
+  text-decoration: underline !important;
+}
+/**
+ * #ccp-information 
+*/
+#ccp-information {
+  margin-top: 0;
+}
+#ccp-information.top-level > div label {
+  font-size: 14px;
+  text-align: right;
+  margin: 0;
+  cursor: text;
+}
+#ccp-information .update-change {
+  color: #468847;
+  background: #DFF0D8 !important;
+  border: 1px solid #D6E9C6;
+}
+.notifications {
+  margin-bottom: 0 !important;
+}
+/**
+ * #ccp-notifications 
+*/
+.ccp-notifications header.row > div > p{
+  text-align: center;
+}
+.ccp-notifications .form-help {
+  top: 1px;
+  position: absolute;
+}
+.ccp-notifications .email-tooltip {
+  left: 114px;
+}
+.ccp-notifications .text-tooltip {
+  left: 140px;
+}
+.ccp-notifications .voice-tooltip {
+  left: 142px;
+}
+.ccp-notifications.top-level > section {
+  margin-bottom: 10px;
+}
+.ccp-notifications label {
+  display: block;
+  font-weight: 100;
+  margin-left: 10px;
+}
+.ccp-notifications label input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  
+  float:left;
+  display: block;
+}
+.ccp-notifications label span {
+  width: 125px;
+  margin-left: 5px;
+  font-weight: 100;
+
+  float: left;
+  display: block;
+
+}
+.ccp-notifications select {
+  width: 80%;
+  margin: 0 auto 0 45px;
+}
+.ccp-notifications .one-line {
+  margin-top: 7px;
+}
+.ccp-notifications button {
+  margin-right: 0;
+  float: right;
+}
+.ccp-notifications .form-cancel {
+  float: right;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+/**
+ * #ccp-subscriptions 
+*/
+#ccp-subscriptions form > div {
+  font-weight: 100;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#ccp-subscriptions form > div label {
+  font-weight: 100;
+}
+#ccp-subscriptions input[type="checkbox"] {
+  margin-right: 4px;
+}
+#ccp-subscriptions .quick-email {
+  color: #00486E;
+}
+#ccp-subscriptions button {
+  margin-right: 0;
+  float: right;
+}
+#ccp-subscriptions .form-cancel {
+  float: right;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.ccp-subscriptions-submit, .ccp-notifications-submit {
+  display: none;
+}
+/* Lightbox
+========================================================================== */
+.ccp-lightbox .ccp-close {
+
+  top: -15px;
+  right: -15px;
+  z-index: 999;
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+  display: block;
+
+  cursor: pointer;
+
+  text-align: center;
+  font: bold 15px/30px Arial;
+
+  color: #FFF;
+  color: rgba(255, 255, 255, .65);
+  background: url('images/btn-close.png') no-repeat center center;
+  
+}
+#ccp-edit-form {
+  margin: 0;
+  padding: 0;
+}
+#ccp-edit-form > fieldset {
+  padding: 0;
+}
+#ccp-edit-form > fieldset > .row, #ccp-edit-form > fieldset > section > .row {
+  padding-left: 25px;
+}
+#ccp-edit-form > fieldset > h2{
+  color: #FFF;
+  font-weight: 100;
+  
+  margin: 0;
+  padding: 12px 0 12px 25px;
+  
+  background-color: #006c9c;  
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #006c9c), color-stop(100%, #00486e));
+  background-image: -webkit-linear-gradient(#006c9c,#00486e);
+  background-image: -moz-linear-gradient(#006c9c,#00486e);
+  background-image: -o-linear-gradient(#006c9c,#00486e);
+  background-image: linear-gradient(#006c9c,#00486e);
+}
+#ccp-edit-form .row {
+  padding: 15px 0;
+}
+
+#ccp-edit-form > fieldset label {
+  margin-top: 7px;
+}
+.ccp-lightbox-submit button{
+  float: right;
+  margin-right: 0;
+}
+.ccp-lightbox-submit button:hover{
+  float: right;
+  margin-right: 0;
+}
+.ccp-lightbox-submit .ccp-lightbox-close, .ccp-lightbox-submit .ccp-continue {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.ccp-current-account {
+  font-weight: bold;
+  width: 160px;
+}
+.edit-mailing-address nav {
+  width: 100%;
+  padding: 10px 0;
+  
+  margin-top: 5px;
+  border-top: 1px dashed #E5E5E5;
+  border-bottom: 1px dashed #E5E5E5;
+}
+.edit-mailing-address nav label {
+  width: 50%;
+  float: left;
+  display: block;
+  font-weight: 100;
+
+  padding: 0 0 0 25px;
+  border-right: 1px dashed #E5E5E5;
+}
+.edit-mailing-address nav label input {
+  margin-right: 5px;
+}
+.edit-mailing-address > .row p{
+  margin-top: 5px;
+  display: none;
+}
+.ccp-add-email, .ccp-add-phone-number {
+  margin-top: 5px;
+  display: inline-block;
+}
+#check-alternate-email-address, #check-alternate-phone-number { display: none; }
+.ccp-primary-mobile label, .ccp-alternate-mobile label {
+  margin-left: 15px;
+}
+.ccp-primary-mobile label input, .ccp-alternate-mobile label input{
+  margin-right: 5px;
+}
+.ccp-alternate-mobile {
+  display: none;
+}
+
+/* Internet Explorer
+========================================================================== */
+.lt-ie9 .btn, .lt-ie9 .btn:hover,
+.lt-ie9 .btn span, .lt-ie9 .btn span:hover { 
+  position: relative; 
+  margin: 0; 
+  height: 40px; 
+  font-family: 'Arial Narrow', Arial, sans-serif; 
+  font-size: 17px; 
+  color: #fff; 
+  text-decoration: none; 
+  text-shadow: 1px 1px 1px rgba(0,0,0,.25); 
+  line-height: 40px; 
+  white-space: nowrap; 
+  overflow: visible; 
+  background-color: transparent; 
+  background-image: url(images/form-buttons.png); 
+  background-repeat: no-repeat; 
+  border: none; 
+  outline: none; 
+  cursor: pointer; 
+  zoom: 1; 
+}
+.lt-ie9 .btn { display: inline-block; padding: 0 15px 0 0; background-position: right -1260px; }
+.lt-ie9 .btn span { display: block !important; padding: 0 0 0 15px; background-position: left -1220px; }
+.lt-ie9 .btn:hover { background-position: right -1340px; }
+.lt-ie9 .btn:hover span { background-position: left -1300px; }
+.lt-ie9 #ccp-edit-form input[type="text"] { padding-bottom: 0; height: 25px; }
+.lt-ie9 #ccp-edit-form .edit-mailing-address nav label { width: 40%; }
+
+
+

@@ -9,7 +9,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
     serverFile: 'server.js',
-    serverFolder: '/Users/montierelliott/Desktop/server/server.json',
 
     shell: {
 
@@ -91,10 +90,6 @@ module.exports = function(grunt) {
   grunt.registerTask('mobile', 'Switching to mobile', function() {
     duke.initialize('mobile');
   });
-
-  
-
-  
 
 };
 

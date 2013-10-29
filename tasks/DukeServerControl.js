@@ -12,49 +12,97 @@ var DukeServerControl = {
 
   doesServerJsonExist: null,
 
-  initialize: function(server) {
-    this.checkServer(function(scope) {
-      grunt.log.subhead("Server JSON status:", scope.doesServerJsonExist);
-      if(scope.doesServerJsonExist) scope.readJSONFile(server);
-      if(!scope.doesServerJsonExist) scope.moveServerToRoot(server);
+  initialize: function (repo) {
+
+    this.checkServer(function (scope) {
+
+      grunt.log.subhead("server.json: ", scope.doesServerJsonExist);
+
+      if (scope.doesServerJsonExist) {
+
+        scope.readJSONFile(repo);
+
+      }
+
+      if (!scope.doesServerJsonExist) {
+
+        grunt.log.warn("Server.json does not exist at the root.");
+
+        scope.moveServerToRoot(repo);
+
+      }
+
     });
 	},
 
-	moveServerToRoot: function(server) {
+	moveServerToRoot: function (repo) {
+
     grunt.log.warn("I'd like to clean up this part with some test on the filesystem");
-    grunt.log.writeln("\nAssuming Root is clean");
-    grunt.log.writeln("Lets begin moving " + server + " to root.");
-    grunt.task.run('shell:'+server+'ToRoot');
+    grunt.log.writeln("Assuming Root is clean.");
+    grunt.log.writeln("Lets begin moving " + repo + " to root.");
+
+    grunt.task.run('shell:' + repo + 'ToRoot');
+
   },
 
-  moveRootToServer: function(fileServer, server) {
-    grunt.log.writeln("Move " + server + " back to it's folder for " + fileServer + " to be moved to root");
-    grunt.task.run('shell:rootTo'+fileServer+'');
-    this.moveServerToRoot(server);
+  moveRootToServer: function (newRepo, oldRepo) {
+
+    grunt.log.writeln("Putting away " + oldRepo);
+
+    grunt.task.run('shell:rootTo' + oldRepo);
+
+    grunt.log.writeln("Moving " + newRepo + " to root");
+
+    this.moveServerToRoot(newRepo);
+
   },
 
-  readJSONFile: function(server) {
+  readJSONFile: function (newRepo) {
+
     var file = grunt.file.readJSON('/Volumes/' + config.server + '/server.json');
-    if(file.server == server) {
+
+    var oldRepo = file.server;
+
+    if (newRepo == oldRepo) {
+
       grunt.log.writeflags(file);
-      grunt.fail.fatal(new Error(server +" is already active"));
+
+      grunt.fail.fatal(new Error(oldRepo + " is already active."));
+
     } else {
-      this.moveRootToServer(file.server, server);
+
+      this.moveRootToServer(newRepo, oldRepo);
+
     }
+
   },
 
-  checkServer: function(cb) {
-    this.doesServerJsonExist = (fs.existsSync("/Volumes/' + config.server + '/server.json")) ? true : false;
+  checkServer: function (cb) {
+
+    var filepath = "/Volumes/" + config.server + "/server.json";
+
+    this.doesServerJsonExist = (fs.existsSync(filepath)) ? true : false;
+
     cb(this);
+
   },
 
-  checkStatus: function() {
-    var file = grunt.file.readJSON('/Volumes/sandboxdev.duke-energy.com/server.json');
+  checkStatus: function () {
+
+    var filepath = "/Volumes/" + config.server + "/server.json";
+
+    var file = grunt.file.readJSON(filepath);
+
     if(!file.server) {
-      grunt.fail.fatal(new Error("Currently there is no server"));
+
+      grunt.fail.fatal(new Error("file.server is not set in /server.json."));
+
     } else {
-      grunt.log.writeln('\nCurrent Server is:', file.server);
+
+      grunt.log.writeln('Active Repository: ', file.server);
+
     }
+
   }
 
 };

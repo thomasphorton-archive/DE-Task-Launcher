@@ -54,6 +54,14 @@ module.exports = function(grunt) {
 
       rootTomobile: {
         command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/de-mobile/',
+      },
+
+      lightingToRoot: {
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/outdoor-lighting/{*,.??*} /Volumes/' + config.server + '/',
+      },
+
+      rootTolighting: {
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/outdoor-lighting/',
       }
 
     }
@@ -85,6 +93,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('www', 'Switching to www', function() {
     duke.initialize('www');
+  });
+
+  grunt.registerTask('outdoor-lighting', 'Switching to outdoor lighting', function() {
+    duke.initialize('lighting');
   });
 
   grunt.registerTask('mobile', 'Switching to mobile', function() {

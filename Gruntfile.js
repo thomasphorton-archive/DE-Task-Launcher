@@ -56,12 +56,12 @@ module.exports = function(grunt) {
         command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/de-mobile/',
       },
 
-      lightingToRoot: {
-        command: 'sudo mv /Volumes/' + config.server + '/_sites/outdoor-lighting/{*,.??*} /Volumes/' + config.server + '/',
+      PEToRoot: {
+        command: 'sudo mv /Volumes/' + config.server + '/_sites/PE/{*,.??*} /Volumes/' + config.server + '/',
       },
 
-      rootTolighting: {
-        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/outdoor-lighting/',
+      rootToPE: {
+        command: 'sudo mv /Volumes/' + config.server + '/{*,.??*} /Volumes/' + config.server + '/_sites/PE/',
       }
 
     }
@@ -95,12 +95,12 @@ module.exports = function(grunt) {
     duke.initialize('www');
   });
 
-  grunt.registerTask('outdoor-lighting', 'Switching to outdoor lighting', function() {
-    duke.initialize('lighting');
-  });
-
   grunt.registerTask('mobile', 'Switching to mobile', function() {
     duke.initialize('mobile');
+  });
+
+  grunt.registerTask('PE', 'Switching to PE', function() {
+    duke.initialize('PE');
   });
 
 };

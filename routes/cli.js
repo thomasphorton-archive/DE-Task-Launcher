@@ -37,6 +37,8 @@ exports.task = function(req, res){
 
   var child = exec(command, function(error, stdout, stderr) {
 
+    var json;
+
     if (stdout) {
       sys.print(stdout);
     }
@@ -46,13 +48,17 @@ exports.task = function(req, res){
     }
 
     if (error !== null) {
-      console.log('exec error: ' + error);
-    }
-
-    var json = {
-      status: 'OK',
-      message: 'Command <pre>' + command + '</pre> ran successfully.',
-      stdout: stdout
+      json = {
+        status: 'Error',
+        message: stdout,
+        stdout: stdout
+      }
+    } else {
+      json = {
+        status: 'OK',
+        message: 'Command <code>' + command + '</code> ran successfully.',
+        stdout: stdout
+      }
     }
 
     var resp = JSON.stringify(json);

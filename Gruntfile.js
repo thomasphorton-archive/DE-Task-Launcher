@@ -1,6 +1,4 @@
-var config = {
-    server: 'sandboxdev.duke-energy.com'
-};
+var config = require('./config.json');
 
 module.exports = function(grunt) {
 

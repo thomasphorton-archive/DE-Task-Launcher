@@ -4,9 +4,7 @@
 var grunt = require('grunt');
 var fs = require('fs');
 
-var config = {
-    server: 'sandboxdev.duke-energy.com'
-};
+var config = require('../config.json');
 
 var DukeServerControl = {
 

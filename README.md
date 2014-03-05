@@ -2,17 +2,21 @@
 
 make duke work with grunt
 
-### external dependencies
-* bower
+## global dependencies
 * npm
+* bower
+* grunt
+
+## getting started
 
 1. clone repository (to your desktop is fine)
-2. install dependencies
-  * bower install
+2. install local dependencies
   * npm install
-3. edit server config in Gruntfile.js
-4. run server with sudo permissions
-5. navigate to http://localhost:3000
-6. click button to change active repository
+  * bower install
+3. edit /config.json
+4. create a server.json file in each repository directory
+5. run server with sudo permissions
+6. navigate to http://localhost:3000
+7. click 'Check Active Repository' to see the current server status
 
 *** warning: be patient! there aren't many failsafes. double check the server before doing anything crazy.

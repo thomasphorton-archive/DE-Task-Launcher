@@ -3,7 +3,7 @@
  * GET home page.
  */
 
-var exec = require('child_process').exec
+var exec = require('child_process').exec;
 var sys = require('sys');
 
 exports.task = function(req, res){
@@ -12,7 +12,7 @@ exports.task = function(req, res){
 
   var task = req.params.task.toLowerCase();
 
-  switch(req.params.task) {
+  switch(task) {
   case "ols":
     command = "grunt ols";
     break;
@@ -49,8 +49,16 @@ exports.task = function(req, res){
       console.log('exec error: ' + error);
     }
 
-  });
+    var json = {
+      status: 'OK',
+      message: 'Command <pre>' + command + '</pre> ran successfully.',
+      stdout: stdout
+    }
 
-  res.render('index', { title: 'Duke Grunt' });
+    var resp = JSON.stringify(json);
+
+    res.send(resp);
+
+  });
 
 };

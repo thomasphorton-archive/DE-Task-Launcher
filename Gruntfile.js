@@ -7,13 +7,13 @@ module.exports = function(grunt) {
   grunt: grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-    
+
     serverFile: 'server.js',
 
     shell: {
 
       options: {
-        stdout: true
+        //stdout: true
       },
 
       olsToRoot: {
@@ -65,10 +65,10 @@ module.exports = function(grunt) {
       }
 
     }
-    
+
 
   });
-  
+
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -104,4 +104,3 @@ module.exports = function(grunt) {
   });
 
 };
-

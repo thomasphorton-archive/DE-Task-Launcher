@@ -3,3 +3,17 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  div.btn-group.btn-group-justified
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='OLS') OLS
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='forms') forms
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='www') www
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='PE') PE
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='deux') deux
+    div.btn-group
+      button.btn.btn-default.btn-repo-switch(data-repository='de-mobile') de-mobile

@@ -2,9 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p A GUI for the Duke Grunt package.
 
-  div.row
+  section
+    h2 Repository Switcher
     div.btn-group.btn-group-justified
       div.btn-group
         button.btn.btn-default.btn-repo-switch.btn-ajax(data-command='OLS') OLS
@@ -19,7 +20,5 @@ block content
       div.btn-group
         button.btn.btn-default.btn-repo-switch.btn-ajax(data-command='de-mobile') de-mobile
 
-  br
-
-  div.row
+  section
     button.btn.btn-default.btn-block.btn-primary.btn-ajax(data-command='stat') Get Stats

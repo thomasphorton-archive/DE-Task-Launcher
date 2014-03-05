@@ -10,10 +10,10 @@ exports.task = function(req, res){
 
   var command;
 
-  console.log(req.params.task);
+  var task = req.params.task.toLowerCase();
 
   switch(req.params.task) {
-  case "OLS":
+  case "ols":
     command = "grunt ols";
     break;
   case "forms":
@@ -22,7 +22,7 @@ exports.task = function(req, res){
   case "www":
     command = "grunt www";
     break;
-  case "PE":
+  case "pe":
     command = "grunt PE";
     break;
   case "deux":
@@ -37,8 +37,13 @@ exports.task = function(req, res){
 
   var child = exec(command, function(error, stdout, stderr) {
 
-    sys.print('stdout: ' + stdout);
-    sys.print('stderr: ' + stderr);
+    if (stdout) {
+      sys.print(stdout);
+    }
+
+    if (stderr) {
+      sys.print('stderr: ' + stderr);
+    }
 
     if (error !== null) {
       console.log('exec error: ' + error);

@@ -9,7 +9,9 @@
     "express": "3.3.5",
     "jade": "*",
     "requirejs": "~2.1.8",
-    "node-sass": "~0.6.6"
+    "node-sass": "~0.6.6",
+    "bower": "~1.2.8",
+    "bower-requirejs": "~0.10.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

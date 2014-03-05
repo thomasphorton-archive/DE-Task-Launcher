@@ -20,3 +20,11 @@ make duke work with grunt
 7. click 'Check Active Repository' to see the current server status
 
 *** warning: be patient! there aren't many failsafes. double check the server before doing anything crazy.
+
+## troubleshooting
+
+### grunt hangs when moving repositories
+check to make sure the target repository does not have an /aspnet_client/ directory.
+
+### can't parse server.json
+run server.json through JSONlint- there is most likely an issue caused by extra whitespace in the JSON.

@@ -16,7 +16,7 @@ make duke work with grunt
 3. edit /config.json
 4. create a server.json file in each repository directory
 5. run server with sudo permissions `sudo node app`
-6. navigate to [http://localhost:3000]
+6. navigate to http://localhost:3000
 7. click 'Check Active Repository' to see the current server status
 
 *** warning: be patient! there aren't many failsafes. double check the server before doing anything crazy.

@@ -14,7 +14,7 @@ $('.btn-ajax').click(function() {
 
   var $this = $(this);
 
-  ajax_cli($this.data('repository'));
+  ajax_cli($this.data('command'));
 
 })
 
